@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SuiY</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="tab_personal">用户</string>
+    <string name="tab_bkshelter">书架</string>
+    <string name="tab_bkstore">书城</string>
+
+    <string name="read_state_t">已读</string>
+    <string name="read_state_f">未读</string>
+</resources>

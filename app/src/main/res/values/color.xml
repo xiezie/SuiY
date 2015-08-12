@@ -1,0 +1,9 @@
+<resources>
+    <color name="color_tab_bg">#ffffff</color>
+    <color name="color_action_bar_color">#5cb2d7</color>
+    <color name="color_tab_text_on">#5cb2d7</color>
+    <color name="color_fg_bg">#ffffff</color>
+
+    <color name="color_black">#000000</color>
+    <color name="color_grey">#f0f0f0</color>
+</resources>

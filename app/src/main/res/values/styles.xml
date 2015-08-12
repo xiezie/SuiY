@@ -1,0 +1,64 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <!-- Support library compatibility -->
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/color_action_bar_color</item>
+        <!-- Support library compatibility -->
+        <item name="background">@color/color_action_bar_color</item>
+    </style>
+    <style name="TabItem" >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">@dimen/tab_height</item>
+        <item name="android:paddingBottom">@dimen/tab_text_bot_padding</item>
+        <item name="android:padding">@dimen/tab_ic_vir_padding</item>
+        <item name="android:gravity">center</item>
+        <!--<item name="android:button">@null</item>-->
+        <item name="android:textColor">@color/tab_text_color_selector</item>
+        <item name="android:button">@null</item>
+    </style>
+
+    <style name="GridBookCover">
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:columnWidth">@dimen/grid_book_cover_width</item>
+        <item name="android:numColumns">auto_fit</item>
+        <item name="android:stretchMode">columnWidth</item>
+        <item name="android:verticalSpacing">@dimen/grid_book_cover_padding</item>
+        <item name="android:horizontalSpacing">@dimen/grid_book_cover_padding</item>
+        <item name="android:gravity">center</item>
+        <item name="android:contentDescription">@string/tab_bkshelter</item>
+    </style>
+
+    <style name="PageCover">
+        <item name="android:layout_width">wrap_content</item>
+        <item name ="android:layout_height">wrap_content</item>
+        <item name ="android:layout_gravity">center_horizontal</item>
+        <item name="android:paddingBottom">@dimen/grid_book_cover_padding</item>
+    </style>
+
+    <style name="BookTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/font_size_subhead</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="ReadState">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/font_size_caption</item>
+    </style>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:id="@+id/context_fame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <RadioGroup
+        android:id="@+id/tab_container"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton android:id="@+id/tab_personal"
+            style="@style/TabItem"
+            android:drawableTop="@drawable/tab_personal_selector"
+            android:text="@string/tab_personal" />
+
+        <RadioButton android:id="@+id/tab_bkshelter"
+            style="@style/TabItem"
+            android:drawableTop="@drawable/tab_bkshelter_selector"
+            android:checked="true"
+            android:text="@string/tab_bkshelter" />
+
+        <RadioButton android:id="@+id/tab_bkstore"
+            style="@style/TabItem"
+            android:drawableTop="@drawable/tab_bkstore_selector"
+            android:text="@string/tab_bkstore" />
+
+    </RadioGroup>
+</LinearLayout>  
