@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     fragmentTransaction.show(bookShelterFragment);
                 }
+                ((BaseFragment)bookShelterFragment).getActionBar(getSupportActionBar());
                 break;
             case R.id.tab_bkstore:
                 bookStoreFragment = fragmentManager.findFragmentByTag(BookStoreFragment.class.getSimpleName());
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     fragmentTransaction.show(bookStoreFragment);
                 }
+                ((BaseFragment)bookStoreFragment).getActionBar(getSupportActionBar());
                 break;
             case R.id.tab_personal:
                 personalFragment = fragmentManager.findFragmentByTag(PersonalFragment.class.getSimpleName());
@@ -83,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     fragmentTransaction.show(personalFragment);
                 }
+                ((BaseFragment)personalFragment).getActionBar(getSupportActionBar());
                 break;
         }
         fragmentTransaction.commit();

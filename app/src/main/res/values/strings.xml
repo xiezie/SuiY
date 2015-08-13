@@ -10,4 +10,5 @@
 
     <string name="read_state_t">已读</string>
     <string name="read_state_f">未读</string>
+    <string name="search_title">Search Local Book</string>
 </resources>
