@@ -2,6 +2,7 @@ package com.example.lango.suiy;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,14 +15,14 @@ import android.widget.RadioGroup;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private FragmentFactory fragmentFactory;
-    private FragmentManager fragmentManager;
+    private Fragment bookShelterFragment, bookStoreFragment, personalFragment;
     private RadioGroup radioGroup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
+        switchFragment(R.id.tab_bkshelter);
         setTabListener();
         setMyActionBar();
     }
@@ -47,17 +48,56 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * switch whole page of fragment
-     * @param checkedId
+     * @param
      */
     private void switchFragment(int checkedId) {
-        BaseFragment fragment = fragmentFactory.getFragmentInstance(checkedId);
-        Log.i("checkid",checkedId + " fragment:  "+fragment);
-        if(fragment != null) {
-            fragment.getActionBar(MainActivity.this.getSupportActionBar());
-            fragmentManager
-                    .beginTransaction()
-                    .replace(R.id.context_fame, fragment)
-                    .commit();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        switch (checkedId) {
+            case R.id.tab_bkshelter:
+                bookShelterFragment = fragmentManager.findFragmentByTag(BookShelterFragment.class.getSimpleName());
+                hideFragments(fragmentTransaction);
+                if(bookShelterFragment == null) {
+                    bookShelterFragment = new BookShelterFragment();
+                    fragmentTransaction.add(R.id.context_fame, bookShelterFragment, BookShelterFragment.class.getSimpleName());
+                } else {
+                    fragmentTransaction.show(bookShelterFragment);
+                }
+                break;
+            case R.id.tab_bkstore:
+                bookStoreFragment = fragmentManager.findFragmentByTag(BookStoreFragment.class.getSimpleName());
+                hideFragments(fragmentTransaction);
+                if(bookStoreFragment == null) {
+                    bookStoreFragment = new BookStoreFragment();
+                    fragmentTransaction.add(R.id.context_fame, bookStoreFragment, BookStoreFragment.class.getSimpleName());
+                } else {
+                    fragmentTransaction.show(bookStoreFragment);
+                }
+                break;
+            case R.id.tab_personal:
+                personalFragment = fragmentManager.findFragmentByTag(PersonalFragment.class.getSimpleName());
+                hideFragments(fragmentTransaction);
+                if(personalFragment == null) {
+                    personalFragment = new PersonalFragment();
+                    fragmentTransaction.add(R.id.context_fame, personalFragment, PersonalFragment.class.getSimpleName());
+                } else {
+                    fragmentTransaction.show(personalFragment);
+                }
+                break;
+        }
+        fragmentTransaction.commit();
+    }
+
+    private void hideFragments(FragmentTransaction fragmentTransaction) {
+
+        if(bookShelterFragment != null) {
+            fragmentTransaction.hide(bookShelterFragment);
+        }
+        if(bookStoreFragment != null) {
+            fragmentTransaction.hide(bookStoreFragment);
+        }
+        if(personalFragment != null) {
+            fragmentTransaction.hide(personalFragment);
         }
     }
 
@@ -66,10 +106,8 @@ public class MainActivity extends AppCompatActivity {
      * initinal value
      */
     private void init() {
-        fragmentFactory = new FragmentFactory();
-        fragmentManager = getSupportFragmentManager();
+
         radioGroup = (RadioGroup) findViewById(R.id.tab_container);
-        switchFragment(R.id.tab_bkshelter);
     }
 
     @Override

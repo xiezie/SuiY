@@ -61,7 +61,7 @@ public class BookShelterFragment extends BaseFragment {
     }
 
     private void setBookOverAdapter() {
-        gridView.setAdapter(new BookPageOverAdapter(getActivity(), data));
+        gridView.setAdapter(new BookPageOverAdapter(getActivity(), data, R.layout.item_front_cover));
     }
 
     private void setGridViewClickListener() {
